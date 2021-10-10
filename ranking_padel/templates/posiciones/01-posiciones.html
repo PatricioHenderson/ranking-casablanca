@@ -1,0 +1,36 @@
+{% extends 'posiciones/base.html' %}
+
+
+{% block content %}
+
+
+{% block title %}Ranking Casa Blanca{% endblock %}
+
+
+
+    
+    <table>
+        <tr>
+            <th>Player</th>
+            
+            {% for torneo in torneo_list %}
+            <th>{{torneo.nombre_torneo}}</th>
+            {% endfor %}
+         </tr>
+        <tr>
+            {% for jugador in jugador_list %}
+            <td>{{jugador.nombre_jugador}} {{jugador.apellido_jugador}}</tr>
+            {% if jugador.jugador_id == punto_list.jugador_id %}
+            <tr><td>{{puntos}}</tr></td>
+            {% endif %}  
+            {% endfor %}  
+           
+        </tr>
+        <!-- <colgroup>
+          <col style="background:black">
+          <col span="2" style="background:yellow">
+        </colgroup> -->
+      </table>
+{% endblock content %}
+
+
